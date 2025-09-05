@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerita Keseharian Aqiilah</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+      text-align: center;
+      background-color: #fce4ec;
+      transition: background-color 0.6s ease;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #Biodata {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      max-width: 650px;
+      width: 90%;
+    }
+
+   .placeholder {
+  background: #ffffffcc;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 10px;
+  max-width: 400px;  
+  width: 90%;       
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+    button {
+      margin: 6px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .pagi { background-color: #ffc8db; }   
+    .siang { background-color: #90d4f9; } 
+    .malam { background-color: #adffb0; } 
+  </style>
+</head>
+<body>
+  <h1>Aqiilah's Daily Story</h1>
+  <div>
+    <button class="pagi" onclick="ceritaPagi()">Cerita Pagi</button>
+    <button class="siang" onclick="ceritaSiang()">Cerita Siang</button>
+    <button class="malam" onclick="ceritaMalam()">Cerita Malam</button>
+  </div>
+  <div id="Story"></div>
+
+ 
+  <script>
+    window.onload = function() {
+      alert(" Wassup y'all, selamat datang di cerita keseharian gue yaa 👋");
+    }
+  </script>
+
+  <script src="pagi.js"></script>
+  <script src="siang.js"></script>
+  <script src="malam.js"></script>
+</body>
+</html>
