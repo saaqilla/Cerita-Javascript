@@ -8,82 +8,70 @@
     body {
       font-family: "Segoe UI", sans-serif;
       margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh; 
+      padding: 20px;
       text-align: center;
       background-color: #fce4ec;
       transition: background-color 0.6s ease;
     }
 
-    h1 {
-      margin-bottom: 20px;
-    }
+    h1 { margin-bottom: 20px; color: #333; }
 
-    #Biodata {
-      margin-top: 20px;
-      font-size: 1.1rem;
-      max-width: 650px;
-      width: 90%;
+    .cerita-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
     }
-
-   .placeholder {
-  background: #ffffffcc;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  text-align: center;
-  line-height: 1.6;
-  margin-top: 10px;
-  max-width: 400px;  
-  width: 90%;       
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
 
     button {
-      margin: 6px;
+      margin: 8px;
       padding: 10px 18px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      color: #fff;
     }
 
-    button:hover {
-      transform: scale(1.05);
-    }
+    .pagi { background-color: #ffc8db; }
+    .siang { background-color: #90d4f9; }
+    .malam { background-color: #adffb0; }
 
-    .pagi { background-color: #ffc8db; }   
-    .siang { background-color: #90d4f9; } 
-    .malam { background-color: #adffb0; } 
+    #output {
+      margin-top: 20px;
+      line-height: 1.7;
+      text-align: center;
+      font-size: 1.05rem;
+    }
   </style>
 </head>
 <body>
-  <h1>Aqiilah's Daily Story</h1>
-  <div>
-    <button class="pagi" onclick="ceritaPagi()">Cerita Pagi</button>
-    <button class="siang" onclick="ceritaSiang()">Cerita Siang</button>
-    <button class="malam" onclick="ceritaMalam()">Cerita Malam</button>
-  </div>
-  <div id="Story"></div>
+  <h1>AQIILAH'S DAILY STORY</h1>
+  <div class="cerita-container">
+    <p>yu kepo sama cerita ai? klik aja yah</p>
+    <button class="pagi" onclick="storyPagi()">Cerita Pagi</button>
+    <button class="siang" onclick="storySiang()">Cerita Siang</button>
+    <button class="malam" onclick="storyMalam()">Cerita Malam</button>
 
- 
+    <div id="output"></div>
+  </div>
+
+  <!-- Prompt Data -->
   <script>
-    window.onload = function() {
-      alert(" Wassup y'all, selamat datang di cerita keseharian gue yaa 👋");
-    }
+    var nama = prompt("knock-knock, siapa di sana?", "taehyung's gf");
+    var sarapan = prompt("biasanya sarapan apa nich?", "sate biawak");
+    var nontonApa = prompt("lo nonton apa aja sih kalo gabut?", "netflix & Youtube nih bray");
+    var game = prompt("spill game nya dong kak?", "main Roblox lah biar keren");
+    var random = prompt("bagi jokes nya donk kaka?", "dunia kita berbeha");
+    var dudukDimana = prompt("cuy, kalo duduk tuh fav spot nya dimana?", "di mana kek, kepo amay");
+    var teman = prompt("bisikin dong nama temen mabar lo brok", "pengen tau aja kids");
   </script>
 
-  <script src="awal_hari.js"></script>
-  <script src="pertengahan_hari.js"></script>
-  <script src="akhir_hari.js"></script>
+  <!-- File JS Eksternal -->
+  <script src="do.js"></script>
+  <script src="re.js"></script>
+  <script src="mi.js"></script>
 </body>
-
 </html>
-
