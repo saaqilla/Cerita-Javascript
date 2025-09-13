@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cerita Keseharian Aqiilah</title>
+  <title>Aqiilah's Daily Story</title>
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -13,18 +13,15 @@
       background-color: #fce4ec;
       transition: background-color 0.6s ease;
     }
-
     h1 { margin-bottom: 20px; color: #333; }
-
     .cerita-container {
       background: #fff;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       max-width: 700px;
-      margin: auto;
+      margin: 20px auto;
     }
-
     button {
       margin: 8px;
       padding: 10px 18px;
@@ -34,23 +31,33 @@
       font-weight: bold;
       color: #fff;
     }
-
     .pagi { background-color: #ffc8db; }
     .siang { background-color: #90d4f9; }
     .malam { background-color: #adffb0; }
-
-    #output {
+    #output, #outputForm {
       margin-top: 20px;
       line-height: 1.7;
       text-align: center;
       font-size: 1.05rem;
     }
+    input, textarea {
+      width: 90%;
+      margin: 8px 0;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .form-btn {
+      background-color: #ff80ab;
+    }
   </style>
 </head>
 <body>
   <h1>AQIILAH'S DAILY STORY</h1>
+
   <div class="cerita-container">
-    <p>yu kepo sama cerita ai? klik aja yah</p>
+    <p>yu kepo sama cerita ai? klik aja bubs</p>
     <button class="pagi" onclick="storyPagi()">Cerita Pagi</button>
     <button class="siang" onclick="storySiang()">Cerita Siang</button>
     <button class="malam" onclick="storyMalam()">Cerita Malam</button>
@@ -58,14 +65,41 @@
     <div id="output"></div>
   </div>
 
+  <div class="cerita-container">
+    <h3>sharing cerita lu dong</h3>
+    <label for="judul"><b>Judul Cerita:</b></label><br>
+    <input type="text" id="judul" placeholder="contoh: day 1 jadi Billionaire"><br>
+
+    <label for="cerita"><b>Isi Cerita:</b></label><br>
+    <textarea id="cerita" rows="4" placeholder="isi cerita km yh cayanQu"></textarea><br>
+
+    <button class="form-btn" onclick="tampilkanCerita()">Tampilkan Cerita</button>
+  </div>
+
+  <div id="outputForm" class="cerita-container"></div>
+
   <script>
     var nama = prompt("knock-knock, siapa di sana?", "taehyung's gf");
-    var sarapan = prompt("biasanya sarapan apa nich?", "sate biawak");
-    var nontonApa = prompt("lo nonton apa aja sih kalo gabut?", "netflix & Youtube nih bray");
+    let sarapan = prompt("biasanya sarapan apa nich?", "sate biawak");
+    const nontonApa = prompt("lo nonton apa aja sih kalo gabut?", "netflix & Youtube nih bray");
     var game = prompt("spill game nya dong kak?", "main Roblox lah biar keren");
-    var random = prompt("bagi jokes nya donk kaka?", "dunia kita berbeha");
-    var dudukDimana = prompt("cuy, kalo duduk tuh fav spot nya dimana?", "di mana kek, kepo amay");
-    var teman = prompt("bisikin dong nama temen mabar lo brok", "pengen tau aja kids");
+    let random = prompt("spill jokesnya donk der?", "jujur kacang ibo");
+    const dudukDimana = prompt("cuy, kalo duduk tuh fav spot nya dimana?", "di mana kek, kepo amay");
+    var teman = prompt("bisikin dong nama temen mabar lo brok", "windut habatusauda");
+    
+    function tampilkanCerita() {
+      const judul = document.getElementById("judul").value;
+      const isi = document.getElementById("cerita").value;
+
+      if (judul && isi) {
+        document.getElementById("outputForm").innerHTML = `
+          <h3>${judul}</h3>
+          <p>${isi}</p>
+      `;
+      } else {
+        alert("DEEYY, ISI DULU LAAHH!!");
+      }
+    }
   </script>
 
   <script src="do.js"></script>
@@ -73,4 +107,3 @@
   <script src="mi.js"></script>
 </body>
 </html>
-
